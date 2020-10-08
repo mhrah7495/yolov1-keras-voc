@@ -41,10 +41,11 @@ class SequenceData(Sequence):
             np.random.shuffle(self.indexes)
 
     def read(self, dataset):
+        print(dataset)
+
         dataset = dataset.strip().split()
         image_path = dataset[0]
         label = dataset[1:]
-        print(dataset)
         image = cv.imread(image_path)
         image = cv.cvtColor(image, cv.COLOR_BGR2RGB)  # opencv读取通道顺序为BGR，所以要转换
         image_h, image_w = image.shape[0:2]
