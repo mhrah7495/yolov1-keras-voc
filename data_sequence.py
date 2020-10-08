@@ -50,7 +50,7 @@ class SequenceData(Sequence):
         image_h, image_w = image.shape[0:2]
         image = cv.resize(image, self.image_size)
         image = image / 255.
-
+        print(label)
         label_matrix = np.zeros([7, 7, 25])
         for l in label:
             l = l.split(',')
